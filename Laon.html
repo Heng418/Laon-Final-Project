@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan & User Management</title>
+
+<link rel="stylesheet" href="Laon.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Loan & User Management</h1>
+
+    <div class="card">
+
+        <h2>Add User</h2>
+
+        <input type="text" id="userId" placeholder="User ID">
+        <input type="text" id="userName" placeholder="Full Name">
+        <input type="email" id="userEmail" placeholder="Email">
+
+        <input type="password" id="userPassword"
+               placeholder="Password"
+               oninput="checkStrength()">
+
+        <div class="strength">
+            <div id="strengthBar"></div>
+        </div>
+
+        <input type="password"
+               id="confirmPassword"
+               placeholder="Confirm Password">
+
+        <input type="file"
+               id="userImage"
+               accept="image/*">
+
+        <button onclick="addUser()">Add User</button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Search User</h2>
+
+        <input type="text"
+               id="searchId"
+               placeholder="Enter User ID">
+
+        <button onclick="searchUser()">
+            Search
+        </button>
+
+        <div id="searchResult"></div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>User List</h2>
+
+        <div id="userList"></div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Loan Calculator</h2>
+
+        <input type="number"
+               id="loanAmount"
+               placeholder="Loan Amount">
+
+        <input type="number"
+               id="interestRate"
+               placeholder="Interest Rate (%)">
+
+        <input type="number"
+               id="loanTerm"
+               placeholder="Months">
+
+        <button onclick="generateSchedule()">
+            Calculate
+        </button>
+
+        <button onclick="printLoanSchedule()">
+            Print
+        </button>
+
+        <div id="loanSummary"></div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Payment</th>
+                    <th>Interest</th>
+                    <th>Principal</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+
+            <tbody id="scheduleBody"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="Loan.js"></script>
+
+</body>
+</html>
